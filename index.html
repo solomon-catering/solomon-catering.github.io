@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шеф-повар Евгений Соломон — Кейтеринг в Москве</title>
+    <!-- Open Graph / Telegram / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solomon-chef.vercel.app/">
+    <meta property="og:title" content="Шеф-повар Евгений Соломон">
+    <meta property="og:description" content="Премиальный кейтеринг и авторские банкеты в Москве.">
+    <meta property="og:image" content="https://solomon-chef.vercel.app/images/chef.jpg">
+    <!-- Twitter Preview -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Шеф-повар Евгений Соломон">
+    <meta name="twitter:description" content="Премиальный кейтеринг и авторские банкеты в Москве.">
+    <meta name="twitter:image" content="https://solomon-chef.vercel.app/images/chef.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 500: '#D4AF37' },
+                        dark: {
+                            950: '#09090B',
+                            900: '#111115',
+                            850: '#18181F',
+                            800: '#22222B',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090B;
+            color: #EDEDED;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-cormorant { font-family: 'Cormorant Garamond', Georgia, serif; }
+        .modal-backdrop {
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+        }
+        .modal-backdrop.hidden-modal {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            display: none !important;
+        }
+        .modal-backdrop:not(.hidden-modal) {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+            display: flex !important;
+        }
+    </style>
+</head>
+<body class="selection:bg-gold-500/30 selection:text-gold-500">
+
+    <!-- Header -->
+    <header class="relative z-40 bg-dark-950/95 border-b border-white/10">
+        <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#" class="flex flex-col">
+                <span class="font-cormorant text-2xl font-bold tracking-widest text-white uppercase">Solomon</span>
+                <span class="text-[9px] tracking-[0.25em] text-gold-500 uppercase -mt-1 font-semibold">Catering Chef</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:+79260662290" class="text-xs font-medium text-zinc-300 hover:text-white transition">
+                    +7 (926) 066-22-90
+                </a>
+                <a href="https://wa.me/79260662290?text=Здравствуйте,%20Евгений!%20Хочу%20узнать%20стоимость%20кейтеринга" 
+                   target="_blank"
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold hover:bg-emerald-600/30 transition">
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero -->
+    <section class="relative min-h-[75vh] py-16 sm:py-20 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="./images/hero.jpg" alt="Кейтеринг" class="w-full h-full object-cover filter brightness-[0.28] contrast-125">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/60 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
+            <div class="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gold-500 text-xs tracking-widest uppercase font-semibold mb-6">
+                Москва и Подмосковье • 15 лет опыта
+            </div>
+
+            <h1 class="font-cormorant text-5xl sm:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                Шеф-повар <br>
+                <span class="text-gold-500">Евгений Соломон</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-zinc-300 font-light mb-8 max-w-xl mx-auto leading-relaxed">
+                Выездное обслуживание мероприятий любого масштаба: фуршеты, банкеты, свадьбы и персональный шеф под ключ.
+            </p>
+
+            <div class="flex items-center justify-center gap-3">
+                <a href="#menu" 
+                   class="px-6 py-3 rounded-xl bg-gold-500 hover:bg-yellow-400 text-dark-950 font-bold text-xs tracking-wider uppercase transition shadow-lg shadow-gold-500/10">
+                    Меню
+                </a>
+                <a href="#contacts" 
+                   class="px-6 py-3 rounded-xl bg-dark-900 hover:bg-dark-850 border border-white/15 text-white font-bold text-xs tracking-wider uppercase transition">
+                    Контакты
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Разделы Меню (КРУПНЫЕ КНОПКИ КАТЕГОРИЙ) -->
+    <section class="py-12 bg-dark-950 border-t border-white/5" id="menu">
+        <div class="max-w-5xl mx-auto px-4">
+            
+            <div class="mb-8">
+                <span class="text-gold-500 text-xs uppercase tracking-widest font-semibold">Каталог блюд</span>
+                <h2 class="font-cormorant text-3xl sm:text-4xl font-bold text-white mt-0.5">Выберите категорию меню</h2>
+                <p class="text-xs text-zinc-400 mt-1">Нажмите на любой раздел, чтобы открыть список блюд с фотографиями</p>
+            </div>
+
+            <!-- 7 КНОПОК КАТЕГОРИЙ (ПЛИТКИ) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mb-8">
+                
+                <!-- 1. Фуршет & Канапе -->
+                <button onclick="openCategory('furshet')" class="group p-5 rounded-2xl bg-dark-900 hover:bg-dark-850 border border-white/10 hover:border-gold-500/50 transition duration-200 text-left flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-3.5">
+                        <span class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center font-bold text-sm">01</span>
+                        <div>
+                            <h3 class="font-cormorant text-2xl font-bold text-white group-hover:text-gold-500 transition">Фуршет & Канапе</h3>
+                            <p class="text-[11px] text-zinc-500">Канапе, мини-тартары, шпажки</p>
+                        </div>
+                    </div>
+                    <span class="text-zinc-500 group-hover:text-gold-500 text-lg transition">→</span>
+                </button>
+
+                <!-- 2. Брускетты -->
+                <button onclick="openCategory('bruschetta')" class="group p-5 rounded-2xl bg-dark-900 hover:bg-dark-850 border border-white/10 hover:border-gold-500/50 transition duration-200 text-left flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-3.5">
+                        <span class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center font-bold text-sm">02</span>
+                        <div>
+                            <h3 class="font-cormorant text-2xl font-bold text-white group-hover:text-gold-500 transition">Брускетты</h3>
+                            <p class="text-[11px] text-zinc-500">С лососем, томатами, ростбифом</p>
+                        </div>
+                    </div>
+                    <span class="text-zinc-500 group-hover:text-gold-500 text-lg transition">→</span>
+                </button>
+
+                <!-- 3. Салаты -->
+                <button onclick="openCategory('salads')" class="group p-5 rounded-2xl bg-dark-900 hover:bg-dark-850 border border-white/10 hover:border-gold-500/50 transition duration-200 text-left flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-3.5">
+                        <span class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center font-bold text-sm">03</span>
+                        <div>
+                            <h3 class="font-cormorant text-2xl font-bold text-white group-hover:text-gold-500 transition">Салаты</h3>
+                            <p class="text-[11px] text-zinc-500">Цезарь, Греческий, Салат с креветками</p>
+                        </div>
+                    </div>
+                    <span class="text-zinc-500 group-hover:text-gold-500 text-lg transition">→</span>
+                </button>
+
+                <!-- 4. Холодные закуски -->
+                <button onclick="openCategory('cold')" class="group p-5 rounded-2xl bg-dark-900 hover:bg-dark-850 border border-white/10 hover:border-gold-500/50 transition duration-200 text-left flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-3.5">
+                        <span class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center font-bold text-sm">04</span>
+                        <div>
+                            <h3 class="font-cormorant text-2xl font-bold text-white group-hover:text-gold-500 transition">Холодные закуски</h3>
+                            <p class="text-[11px] text-zinc-500">Мясное и сырное плато, овощи</p>
+                        </div>
+                    </div>
+                    <span class="text-zinc-500 group-hover:text-gold-500 text-lg transition">→</span>
+                </button>
+
+                <!-- 5. Горячее -->
+                <button onclick="openCategory('hot')" class="group p-5 rounded-2xl bg-dark-900 hover:bg-dark-850 border border-white/10 hover:border-gold-500/50 transition duration-200 text-left flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-3.5">
+                        <span class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center font-bold text-sm">05</span>
+                        <div>
+                            <h3 class="font-cormorant text-2xl font-bold text-white group-hover:text-gold-500 transition">Горячие блюда</h3>
+                            <p class="text-[11px] text-zinc-500">Стейк, лосось, курица гриль</p>
+                        </div>
+                    </div>
+                    <span class="text-zinc-500 group-hover:text-gold-500 text-lg transition">→</span>
+                </button>
+
+                <!-- 6. Гарниры -->
+                <button onclick="openCategory('sides')" class="group p-5 rounded-2xl bg-dark-900 hover:bg-dark-850 border border-white/10 hover:border-gold-500/50 transition duration-200 text-left flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center gap-3.5">
+                        <span class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center font-bold text-sm">06</span>
+                        <div>
+                            <h3 class="font-cormorant text-2xl font-bold text-white group-hover:text-gold-500 transition">Гарниры</h3>
+                            <p class="text-[11px] text-zinc-500">Картофель фри, овощи на гриле</p>
+                        </div>
+                    </div>
+                    <span class="text-zinc-500 group-hover:text-gold-500 text-lg transition">→</span>
+                </button>
+
+                <!-- 7. Десерты -->
+                <button onclick="openCategory('desserts')" class="group p-5 rounded-2xl bg-dark-900 hover:bg-dark-850 border border-white/10 hover:border-gold-500/50 transition duration-200 text-left flex items-center justify-between cursor-pointer sm:col-span-2 lg:col-span-3">
+                    <div class="flex items-center gap-3.5">
+                        <span class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/20 text-gold-500 flex items-center justify-center font-bold text-sm">07</span>
+                        <div>
+                            <h3 class="font-cormorant text-2xl font-bold text-white group-hover:text-gold-500 transition">Десерты и Фрукты</h3>
+                            <p class="text-[11px] text-zinc-500">Чизкейк, фруктовая тарелка, выпечка</p>
+                        </div>
+                    </div>
+                    <span class="text-zinc-500 group-hover:text-gold-500 text-lg transition">→</span>
+                </button>
+            </div>
+
+            <!-- БЛОК: БЛЮДА НЕ ИЗ МЕНЮ / ПО ЖЕЛАНИЮ КЛИЕНТА -->
+            <div class="p-6 rounded-2xl bg-dark-900 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl shadow-gold-500/5">
+                <div class="text-center sm:text-left">
+                    <div class="inline-block text-gold-500 text-[10px] uppercase tracking-widest font-bold mb-1">Индивидуальное меню</div>
+                    <h3 class="font-cormorant text-2xl font-bold text-white">Приготовим любые блюда по вашему желанию</h3>
+                    <p class="text-xs text-zinc-400 mt-1 max-w-xl leading-relaxed">
+                        Не нашли любимое блюдо? Шеф-повар Евгений Соломон приготовит любые позиции по вашему запросу: домашняя кухня, национальные блюда, вегетарианские или авторские рецепты под концепцию праздника.
+                    </p>
+                </div>
+                <a href="https://wa.me/79260662290?text=Здравствуйте,%20Евгений!%20Хочу%20предложить%20свои%20блюда%20на%20мероприятие" 
+                   target="_blank"
+                   class="px-5 py-3 rounded-xl bg-gold-500 hover:bg-yellow-400 text-dark-950 font-bold text-xs tracking-wider uppercase transition shrink-0 whitespace-nowrap shadow-lg shadow-gold-500/10">
+                    Заказать свое блюдо
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. О шефе -->
+    <section class="py-12 bg-dark-900 border-t border-white/5" id="about">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center gap-8">
+            <div class="w-48 h-60 sm:w-56 sm:h-72 rounded-2xl overflow-hidden border border-white/15 shrink-0 shadow-2xl">
+                <img src="./images/chef.jpg" alt="Евгений Соломон" class="w-full h-full object-cover object-center filter contrast-105">
+            </div>
+            <div>
+                <span class="text-gold-500 text-xs uppercase tracking-widest font-semibold">Шеф-повар</span>
+                <h3 class="font-cormorant text-3xl sm:text-4xl font-bold text-white mt-1 mb-3">Евгений Соломон</h3>
+                <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-4">
+                    15 лет опыта организации выездного питания на частных и корпоративных площадках Москвы и Подмосковья. 
+                </p>
+                <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    Закупка только отборных свежих продуктов, соблюдение санитарных стандартов СанПиН, подача блюд точно по таймингу программы и безупречный порядок на кухне под ключ.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Отзывы -->
+    <section class="py-10 bg-dark-950 border-t border-white/5" id="reviews">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex items-end justify-between mb-6 gap-2">
+                <div>
+                    <span class="text-gold-500 text-xs uppercase tracking-widest font-semibold">Репутация</span>
+                    <h2 class="font-cormorant text-3xl sm:text-4xl font-bold text-white mt-0.5">Отзывы заказчиков</h2>
+                </div>
+                <button type="button" onclick="openAllReviews();" class="px-3.5 py-1.5 rounded-lg bg-dark-900 hover:bg-dark-850 border border-white/15 text-xs text-gold-500 font-semibold transition shrink-0 flex items-center gap-1.5 cursor-pointer">
+                    <span>Все отзывы</span>
+                    <span class="text-zinc-500 font-normal">· 12</span>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="p-5 rounded-xl bg-dark-900 border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-500 text-xs mb-2.5">★★★★★</div>
+                        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-3">
+                            «Евгений организовывал фуршет на корпоратив нашей компании на 70 человек. Брускетты с лососем и мини-тартары разошлись моментально! Сервировка на 10 из 10.»
+                        </p>
+                    </div>
+                    <div class="border-t border-white/5 pt-2.5 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-white">Мария В.</div>
+                            <div class="text-[10px] text-zinc-500">Корпоратив (Москва-Сити)</div>
+                        </div>
+                        <span class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">WhatsApp</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-dark-900 border border-gold-500/30 flex flex-col justify-between shadow-lg shadow-gold-500/5">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-500 text-xs mb-2.5">★★★★★</div>
+                        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-3">
+                            «Заказывали банкет за городом на 45 гостей. Главным требованием было горячее на гриле. Стейки рибай и лосось были сочнейшими, гости до сих пор вспоминают!»
+                        </p>
+                    </div>
+                    <div class="border-t border-white/5 pt-2.5 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-white">Артем и Елена</div>
+                            <div class="text-[10px] text-zinc-500">Свадьба (Новая Рига)</div>
+                        </div>
+                        <span class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">WhatsApp</span>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-dark-900 border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold-500 text-xs mb-2.5">★★★★★</div>
+                        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-3">
+                            «Приглашали Евгения в качестве личного шефа на юбилей в дом. Всё под ключ — продукты, посуда, подача. Чистота на кухне идеальная. Спасибо огромное!»
+                        </p>
+                    </div>
+                    <div class="border-t border-white/5 pt-2.5 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs font-bold text-white">Ольга Дмитриевна</div>
+                            <div class="text-[10px] text-zinc-500">Юбилей (Барвиха)</div>
+                        </div>
+                        <span class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20">WhatsApp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Контакты -->
+    <section class="py-12 bg-dark-900 border-t border-white/5 text-center" id="contacts">
+        <div class="max-w-xl mx-auto px-4">
+            <h3 class="font-cormorant text-2xl sm:text-3xl font-bold text-white mb-1.5">Связаться с шефом</h3>
+            <p class="text-xs text-zinc-400 mb-6">Рассчитать стоимость меню и дату вашего мероприятия</p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 mb-6">
+                <a href="https://wa.me/79260662290?text=Здравствуйте,%20Евгений!%20Хочу%20узнать%20стоимость%20кейтеринга" 
+                   target="_blank"
+                   class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs tracking-wider uppercase transition">
+                    Написать в WhatsApp
+                </a>
+                <a href="tel:+79260662290" 
+                   class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-dark-850 hover:bg-dark-800 border border-white/10 text-white font-bold text-xs tracking-wider uppercase transition">
+                    +7 (926) 066-22-90
+                </a>
+            </div>
+
+            <div class="text-xs text-zinc-500 space-y-0.5">
+                <div>Второй телефон: +7 (999) 556-22-80</div>
+                <div>Почта: jenea-solomon@mail.ru</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-dark-950 border-t border-white/5 text-center text-xs text-zinc-600">
+        <p>© 2026 SolomonChef Catering. Москва и МО.</p>
+    </footer>
+
+
+    <!-- ПОЛНОЭКРАННОЕ ОКНО КАТЕГОРИИ МЕНЮ (С ФОТОГРАФИЯМИ И БЛЮДАМИ) -->
+    <div id="category-page" class="modal-backdrop hidden-modal fixed inset-0 z-50 overflow-y-auto bg-dark-950/95 backdrop-blur-lg">
+        <div class="max-w-4xl mx-auto px-4 py-8 min-h-screen flex flex-col justify-between">
+            <div>
+                <!-- Top bar with Back button -->
+                <div class="flex items-center justify-between pb-6 border-b border-white/10 mb-8 sticky top-0 bg-dark-950/95 backdrop-blur-md pt-2 z-10">
+                    <button type="button" onclick="closeCategory()" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-dark-900 border border-white/15 text-gold-500 font-semibold text-xs hover:bg-dark-850 transition cursor-pointer">
+                        <span>← Назад к меню</span>
+                    </button>
+                    <span id="cat-badge" class="text-xs text-zinc-400 font-mono"></span>
+                </div>
+
+                <!-- Category Heading -->
+                <div class="mb-8">
+                    <h2 id="cat-title" class="font-cormorant text-4xl sm:text-5xl font-bold text-white mb-2"></h2>
+                    <p id="cat-desc" class="text-sm text-zinc-400"></p>
+                </div>
+
+                <!-- Simple Dishes Grid with Exact Matching Images -->
+                <div id="cat-dishes" class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка всех отзывов -->
+    <div id="reviews-modal" class="modal-backdrop hidden-modal fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-md" onclick="if(event.target === this) closeAllReviews();">
+        <div class="relative w-full max-w-lg bg-dark-900 border border-white/15 rounded-2xl overflow-hidden shadow-2xl max-h-[85vh] flex flex-col" onclick="event.stopPropagation();">
+            <div class="p-4 border-b border-white/10 flex items-center justify-between">
+                <div>
+                    <h3 class="font-cormorant text-2xl font-bold text-white">Все отзывы заказчиков</h3>
+                    <p class="text-[11px] text-zinc-400">Переписки и отзывы с реальных мероприятий</p>
+                </div>
+                <button type="button" onclick="closeAllReviews();" class="w-8 h-8 rounded-full bg-dark-950 border border-white/10 text-white flex items-center justify-center hover:bg-dark-800 cursor-pointer">
+                    ✕
+                </button>
+            </div>
+            <div class="p-4 overflow-y-auto space-y-3">
+                <div class="p-4 rounded-xl bg-dark-950 border border-white/10">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-white">Мария В. (Москва-Сити)</span>
+                        <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">WhatsApp</span>
+                    </div>
+                    <p class="text-xs text-zinc-300 leading-relaxed">«Евгений организовывал фуршет на корпоратив нашей компании на 70 человек. Брускетты с лососем и мини-тартары разошлись моментально! Сервировка на 10 из 10.»</p>
+                </div>
+                <div class="p-4 rounded-xl bg-dark-950 border border-white/10">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-white">Артем и Елена (Новая Рига)</span>
+                        <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">WhatsApp</span>
+                    </div>
+                    <p class="text-xs text-zinc-300 leading-relaxed">«Заказывали банкет за городом на 45 гостей. Главным требованием было горячее на гриле. Стейки рибай и лосось были сочнейшими, гости до сих пор вспоминают!»</p>
+                </div>
+                <div class="p-4 rounded-xl bg-dark-950 border border-white/10">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-white">Ольга Дмитриевна (Барвиха)</span>
+                        <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">WhatsApp</span>
+                    </div>
+                    <p class="text-xs text-zinc-300 leading-relaxed">«Приглашали Евгения в качестве личного шефа на юбилей в дом. Всё под ключ — продукты, посуда, подача. Чистота на кухне идеальная. Спасибо огромное!»</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS: ДАННЫЕ ПРОСТЫХ БЛЮД С ТОЧНЫМИ ФОТОГРАФИЯМИ -->
+    <script>
+        const categoriesDB = {
+            furshet: {
+                title: 'Фуршет & Канапе',
+                desc: 'Классические порционные закуски finger-food для приветственной зоны и фуршета.',
+                badge: '4 позиции',
+                dishes: [
+                    { title: 'Канапе на шпажках с сыром и виноградом', weight: '45 г', img: './images/def_kanape.jpg', desc: 'Кубики сыра, виноград, оливки и зелень на удобных шпажках.' },
+                    { title: 'Мини-бутерброды с красной рыбой', weight: '55 г', img: './images/bruschetta.jpg', desc: 'Хрустящий багет, сливочный сыр и ломтики слабосоленого лосося.' },
+                    { title: 'Тартар из говядины на тосте', weight: '60 г', img: './images/tartar.jpg', desc: 'Рубленое нежное мясо со специями на подрумяненном хлебе.' },
+                    { title: 'Заварные профитроли с паштетом', weight: '50 г', img: './images/profiteroles.jpg', desc: 'Нежное заварное тесто с начинкой из домашнего паштета.' }
+                ]
+            },
+            bruschetta: {
+                title: 'Брускетты',
+                desc: 'Традиционные хрустящие брускетты на свежевыпеченном багете.',
+                badge: '3 позиции',
+                dishes: [
+                    { title: 'Брускетта с томатами и базиликом', weight: '85 г', img: './images/def_bruschetta.jpg', desc: 'Спелые помидоры, чесночное оливковое масло и свежий базилик.' },
+                    { title: 'Брускетта со слабосоленым лососем', weight: '90 г', img: './images/bruschetta.jpg', desc: 'Творожный сыр, свежий огурец и мурманский лосось.' },
+                    { title: 'Брускетта с ростбифом', weight: '95 г', img: './images/bruschetta_real.jpg', desc: 'Сочная говядина тонкой нарезки, листья рукколы и соус.' }
+                ]
+            },
+            salads: {
+                title: 'Салаты',
+                desc: 'Популярные классические салаты в банкетной или порционной подаче.',
+                badge: '3 позиции',
+                dishes: [
+                    { title: 'Салат Цезарь с курицей', weight: '220 г', img: './images/def_caesar.jpg', desc: 'Листья салата романо, куриное филе на гриле, пармезан, сухарики и соус Цезарь.' },
+                    { title: 'Классический Греческий салат', weight: '210 г', img: './images/def_greek_salad.jpg', desc: 'Свежие огурцы, помидоры, сладкий перец, сыр фета, маслины и орегано.' },
+                    { title: 'Салат с тигровыми креветками', weight: '200 г', img: './images/shrimp_salad.jpg', desc: 'Обжаренные креветки, микс зелени, томаты черри и легкая заправка.' }
+                ]
+            },
+            cold: {
+                title: 'Холодные закуски',
+                desc: 'Традиционные банкетные тарелки и нарезки.',
+                badge: '3 позиции',
+                dishes: [
+                    { title: 'Свежая овощная нарезка', weight: '250 г', img: './images/def_fresh_veg.jpg', desc: 'Бакинские огурцы, грунтовые томаты, болгарский перец, редис и свежая зелень.' },
+                    { title: 'Мясное ассорти', weight: '260 г', img: './images/def_cold_meat.jpg', desc: 'Буженина домашняя, ростбиф, ветчина и сырокопченая колбаса.' },
+                    { title: 'Сырная тарелка', weight: '230 г', img: './images/cheese_plate.jpg', desc: 'Ассорти из нескольких видов твердых и мягких сыров с медом и орехами.' }
+                ]
+            },
+            hot: {
+                title: 'Горячие блюда',
+                desc: 'Основные горячие банкетные блюда из мяса, птицы и рыбы.',
+                badge: '3 позиции',
+                dishes: [
+                    { title: 'Стейк из говядины на гриле', weight: '260 г', img: './images/def_steak.jpg', desc: 'Сочный мясной стейк с пряными травами и перечным соусом.' },
+                    { title: 'Стейк лосося на пару / гриле', weight: '220 г', img: './images/def_salmon.jpg', desc: 'Филе лосося с лимоном, солью и розмарином.' },
+                    { title: 'Куриное филе на углях (шашлычки)', weight: '240 г', img: './images/def_chicken.jpg', desc: 'Нежное маринованное куриное мясо, обжаренное до золотистой корочки.' }
+                ]
+            },
+            sides: {
+                title: 'Гарниры',
+                desc: 'Простые и любимые гарниры к горячим блюдам.',
+                badge: '2 позиции',
+                dishes: [
+                    { title: 'Картофель фри / по-деревенски', weight: '180 г', img: './images/def_fries.jpg', desc: 'Хрустящий золотистый картофель с морской солью и соусом.' },
+                    { title: 'Овощи на гриле', weight: '180 г', img: './images/grilled_veg.jpg', desc: 'Цукини, сладкий перец, томаты и шампиньоны с дымком.' }
+                ]
+            },
+            desserts: {
+                title: 'Десерты и Фрукты',
+                desc: 'Сладкий стол и свежие фрукты к чаю и кофе.',
+                badge: '2 позиции',
+                dishes: [
+                    { title: 'Классический чизкейк', weight: '140 г', img: './images/def_cheesecake.jpg', desc: 'Нежный сливочный торт на песочной основе с ягодным соусом.' },
+                    { title: 'Сезонная фруктовая тарелка', weight: '350 г', img: './images/def_fruit.jpg', desc: 'Ананас, виноград, апельсины, яблоки, киви и свежие ягоды.' }
+                ]
+            }
+        };
+
+        function openCategory(key) {
+            const data = categoriesDB[key];
+            if (!data) return;
+
+            document.getElementById('cat-title').innerText = data.title;
+            document.getElementById('cat-desc').innerText = data.desc;
+            document.getElementById('cat-badge').innerText = data.badge;
+
+            const list = document.getElementById('cat-dishes');
+            list.innerHTML = '';
+
+            data.dishes.forEach(d => {
+                const el = document.createElement('div');
+                el.className = 'rounded-2xl overflow-hidden bg-dark-900 border border-white/10 flex flex-col justify-between';
+                el.innerHTML = `
+                    <div>
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="${d.img}" alt="${d.title}" class="w-full h-full object-cover">
+                            <span class="absolute bottom-3 right-3 bg-dark-950/80 backdrop-blur-sm text-gold-500 font-mono text-xs px-2.5 py-1 rounded-md border border-white/10">${d.weight}</span>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-cormorant text-2xl font-bold text-white mb-2">${d.title}</h4>
+                            <p class="text-xs text-zinc-400 leading-relaxed">${d.desc}</p>
+                        </div>
+                    </div>
+                `;
+                list.appendChild(el);
+            });
+
+            const page = document.getElementById('category-page');
+            page.classList.remove('hidden-modal');
+            window.scrollTo(0, 0);
+            document.body.style.overflow = 'hidden';
+
+            // Push state into browser history so Back button/swipe works
+            if (location.hash !== '#' + key) {
+                history.pushState({ modal: 'category', key: key }, '', '#' + key);
+            }
+        }
+
+        function closeCategory(fromHistory = false) {
+            const page = document.getElementById('category-page');
+            if (page.classList.contains('hidden-modal')) return;
+            page.classList.add('hidden-modal');
+            document.body.style.overflow = 'auto';
+
+            // Remove hash from history if closed via button, not history pop
+            if (!fromHistory && location.hash) {
+                history.pushState(null, '', window.location.pathname);
+            }
+
+            const menuSection = document.getElementById('menu');
+            if (menuSection) {
+                menuSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function openAllReviews() {
+            const m = document.getElementById('reviews-modal');
+            m.classList.remove('hidden-modal');
+            document.body.style.overflow = 'hidden';
+            history.pushState({ modal: 'reviews' }, '', '#reviews-modal');
+        }
+        function closeAllReviews(fromHistory = false) {
+            const m = document.getElementById('reviews-modal');
+            if (m.classList.contains('hidden-modal')) return;
+            m.classList.add('hidden-modal');
+            document.body.style.overflow = 'auto';
+            if (!fromHistory && location.hash === '#reviews-modal') {
+                history.pushState(null, '', window.location.pathname);
+            }
+        }
+
+        // Listen for iPhone back swipe and browser Back button
+        window.addEventListener('popstate', (e) => {
+            const catPage = document.getElementById('category-page');
+            const revModal = document.getElementById('reviews-modal');
+
+            if (!catPage.classList.contains('hidden-modal')) {
+                closeCategory(true);
+            } else if (!revModal.classList.contains('hidden-modal')) {
+                closeAllReviews(true);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCategory();
+                closeAllReviews();
+            }
+        });
+    </script>
+</body>
+</html>
